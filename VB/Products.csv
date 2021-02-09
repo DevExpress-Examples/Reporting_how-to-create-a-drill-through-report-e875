@@ -1,0 +1,78 @@
+ProductID|CategoryID|ProductName|QuantityPerUnit|SupplierID|UnitsInStock|UnitsOnOrder|UnitPrice|ReorderLevel|Discontinued
+1|1|Chai|10 boxes x 20 bags|1|39|0|18|10|FALSE
+2|1|Chang|24 - 12 oz bottles|1|17|40|19|25|FALSE
+3|2|Aniseed Syrup|12 - 550 ml bottles|1|13|70|10|25|FALSE
+4|2|Chef Anton's Cajun Seasoning|48 - 6 oz jars|2|53|0|22|0|FALSE
+5|2|Chef Anton's Gumbo Mix|36 boxes|2|0|0|21.4|0|TRUE
+6|2|Grandma's Boysenberry Spread|12 - 8 oz jars|3|120|0|25|25|FALSE
+7|7|Uncle Bob's Organic Dried Pears|12 - 1 lb pkgs.|3|15|0|30|10|FALSE
+8|2|Northwoods Cranberry Sauce|12 - 12 oz jars|3|6|0|40|0|FALSE
+9|6|Mishi Kobe Niku|18 - 500 g pkgs.|4|29|0|97|0|TRUE
+10|8|Ikura|12 - 200 ml jars|4|31|0|31|0|FALSE
+11|4|Queso Cabrales|1 kg pkg.|5|22|30|21|30|FALSE
+12|4|Queso Manchego La Pastora|10 - 500 g pkgs.|5|86|0|38|0|FALSE
+13|8|Konbu|2 kg box|6|24|0|6|5|FALSE
+14|7|Tofu|40 - 100 g pkgs.|6|35|0|23.3|0|FALSE
+15|2|Genen Shouyu|24 - 250 ml bottles|6|39|0|15.5|5|FALSE
+16|3|Pavlova|32 - 500 g boxes|7|29|0|17.5|10|FALSE
+17|6|Alice Mutton|20 - 1 kg tins|7|0|0|39|0|TRUE
+18|8|Carnarvon Tigers|16 kg pkg.|7|42|0|62.5|0|FALSE
+19|3|Teatime Chocolate Biscuits|10 boxes x 12 pieces|8|25|0|9.2|5|FALSE
+20|3|Sir Rodney's Marmalade|30 gift boxes|8|40|0|81|0|FALSE
+21|3|Sir Rodney's Scones|24 pkgs. x 4 pieces|8|3|40|10|5|FALSE
+22|5|Gustaf's Knackebrod|24 - 500 g pkgs.|9|104|0|21|25|FALSE
+23|5|Tunnbrod|12 - 250 g pkgs.|9|61|0|9|25|FALSE
+24|1|Guarana Fantastica|12 - 355 ml cans|10|20|0|4.5|0|TRUE
+25|3|NuNuCa Nu?-Nougat-Creme|20 - 450 g glasses|11|76|0|14|30|FALSE
+26|3|Gumbar Gummibarchen|100 - 250 g bags|11|15|0|31.2|0|FALSE
+27|3|Schoggi Schokolade|100 - 100 g pieces|11|49|0|43.9|30|FALSE
+28|7|Rossle Sauerkraut|25 - 825 g cans|12|26|0|45.6|0|TRUE
+29|6|Thuringer Rostbratwurst|50 bags x 30 sausgs.|12|0|0|124|0|TRUE
+30|8|Nord-Ost Matjeshering|10 - 200 g glasses|13|10|0|25.9|15|FALSE
+31|4|Gorgonzola Telino|12 - 100 g pkgs|14|0|70|12.5|20|FALSE
+32|4|Mascarpone Fabioli|24 - 200 g pkgs.|14|9|40|32|25|FALSE
+33|4|Geitost|500 g|15|112|0|2.5|20|FALSE
+34|1|Sasquatch Ale|24 - 12 oz bottles|16|111|0|14|15|FALSE
+35|1|Steeleye Stout|24 - 12 oz bottles|16|20|0|18|15|FALSE
+36|8|Inlagd Sill|24 - 250 g  jars|17|112|0|19|20|FALSE
+37|8|Gravad lax|12 - 500 g pkgs.|17|11|50|26|25|FALSE
+38|1|Cote de Blaye|12 - 75 cl bottles|18|17|0|264|15|FALSE
+39|1|Chartreuse verte|750 cc per bottle|18|69|0|18|5|FALSE
+40|8|Boston Crab Meat|24 - 4 oz tins|19|123|0|18.4|30|FALSE
+41|8|Jack's New England Clam Chowder|12 - 12 oz cans|19|85|0|9.65|10|FALSE
+42|5|Singaporean Hokkien Fried Mee|32 - 1 kg pkgs.|20|26|0|14|0|TRUE
+43|1|Ipoh Coffee|16 - 500 g tins|20|17|10|46|25|FALSE
+44|2|Gula Malacca|20 - 2 kg bags|20|27|0|19.5|15|FALSE
+45|8|Rogede sild|1k pkg.|21|5|70|9.5|15|FALSE
+46|8|Spegesild|4 - 450 g glasses|21|95|0|12|0|FALSE
+47|3|Zaanse koeken|10 - 4 oz boxes|22|36|0|9.5|0|FALSE
+48|3|Chocolade|10 pkgs.|22|15|70|12.8|25|FALSE
+49|3|Maxilaku|24 - 50 g pkgs.|23|10|60|20|15|FALSE
+50|3|Valkoinen suklaa|12 - 100 g bars|23|65|0|16.3|30|FALSE
+51|7|Manjimup Dried Apples|50 - 300 g pkgs.|24|20|0|53|10|FALSE
+52|5|Filo Mix|16 - 2 kg boxes|24|38|0|7|25|FALSE
+53|6|Perth Pasties|48 pieces|24|0|0|32.8|0|TRUE
+54|6|Tourtiere|16 pies|25|21|0|7.45|10|FALSE
+55|6|Pate chinois|24 boxes x 2 pies|25|115|0|24|20|FALSE
+56|5|Gnocchi di nonna Alice|24 - 250 g pkgs.|26|21|10|38|30|FALSE
+57|5|Ravioli Angelo|24 - 250 g pkgs.|26|36|0|19.5|20|FALSE
+58|8|Escargots de Bourgogne|24 pieces|27|62|0|13.3|20|FALSE
+59|4|Raclette Courdavault|5 kg pkg.|28|79|0|55|0|FALSE
+60|4|Camembert Pierrot|15 - 300 g rounds|28|19|0|34|0|FALSE
+61|2|Sirop d'erable|24 - 500 ml bottles|29|113|0|28.5|25|FALSE
+62|3|Tarte au sucre|48 pies|29|17|0|49.3|0|FALSE
+63|2|Vegie-spread|15 - 625 g jars|7|24|0|43.9|5|FALSE
+64|5|Wimmers gute Semmelknodel|20 bags x 4 pieces|12|22|80|33.3|30|FALSE
+65|2|Louisiana Fiery Hot Pepper Sauce|32 - 8 oz bottles|2|76|0|21.1|0|FALSE
+66|2|Louisiana Hot Spiced Okra|24 - 8 oz jars|2|4|100|17|20|FALSE
+67|1|Laughing Lumberjack Lager|24 - 12 oz bottles|16|52|0|14|10|FALSE
+68|3|Scottish Longbreads|10 boxes x 8 pieces|8|6|10|12.5|15|FALSE
+69|4|Gudbrandsdalsost|10 kg pkg.|15|26|0|36|15|FALSE
+70|1|Outback Lager|24 - 355 ml bottles|7|15|10|15|30|FALSE
+71|4|Flotemysost|10 - 500 g pkgs.|15|26|0|21.5|0|FALSE
+72|4|Mozzarella di Giovanni|24 - 200 g pkgs.|14|14|0|34.8|0|FALSE
+73|8|Rod Kaviar|24 - 150 g jars|17|101|0|15|5|FALSE
+74|7|Longlife Tofu|5 kg pkg.|4|4|20|10|5|FALSE
+75|1|Rhonbrau Klosterbier|24 - 0.5 l bottles|12|125|0|7.75|25|FALSE
+76|1|Lakkalikoori|500 ml|23|57|0|18|20|FALSE
+77|2|Original Frankfurter grune So?e|12 boxes|12|32|0|13|15|FALSE
