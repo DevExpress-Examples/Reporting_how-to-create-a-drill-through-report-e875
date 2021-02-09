@@ -49,6 +49,17 @@ namespace DrillThroughReport {
             DevExpress.DataAccess.Sql.Column column11 = new DevExpress.DataAccess.Sql.Column();
             DevExpress.DataAccess.Sql.ColumnExpression columnExpression11 = new DevExpress.DataAccess.Sql.ColumnExpression();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetailReport));
+            DevExpress.DataAccess.Excel.FieldInfo fieldInfo1 = new DevExpress.DataAccess.Excel.FieldInfo();
+            DevExpress.DataAccess.Excel.FieldInfo fieldInfo2 = new DevExpress.DataAccess.Excel.FieldInfo();
+            DevExpress.DataAccess.Excel.FieldInfo fieldInfo3 = new DevExpress.DataAccess.Excel.FieldInfo();
+            DevExpress.DataAccess.Excel.FieldInfo fieldInfo4 = new DevExpress.DataAccess.Excel.FieldInfo();
+            DevExpress.DataAccess.Excel.FieldInfo fieldInfo5 = new DevExpress.DataAccess.Excel.FieldInfo();
+            DevExpress.DataAccess.Excel.FieldInfo fieldInfo6 = new DevExpress.DataAccess.Excel.FieldInfo();
+            DevExpress.DataAccess.Excel.FieldInfo fieldInfo7 = new DevExpress.DataAccess.Excel.FieldInfo();
+            DevExpress.DataAccess.Excel.FieldInfo fieldInfo8 = new DevExpress.DataAccess.Excel.FieldInfo();
+            DevExpress.DataAccess.Excel.FieldInfo fieldInfo9 = new DevExpress.DataAccess.Excel.FieldInfo();
+            DevExpress.DataAccess.Excel.FieldInfo fieldInfo10 = new DevExpress.DataAccess.Excel.FieldInfo();
+            DevExpress.DataAccess.Excel.CsvSourceOptions csvSourceOptions1 = new DevExpress.DataAccess.Excel.CsvSourceOptions();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.xrTable1 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -71,8 +82,11 @@ namespace DrillThroughReport {
             this.topMarginBand1 = new DevExpress.XtraReports.UI.TopMarginBand();
             this.bottomMarginBand1 = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
+            this.excelDataSource1 = new DevExpress.DataAccess.Excel.ExcelDataSource();
+            this.objectDataSource1 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -329,6 +343,54 @@ namespace DrillThroughReport {
             selectQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
+            // excelDataSource1
+            // 
+            this.excelDataSource1.FileName = "Products.csv";
+            this.excelDataSource1.Name = "excelDataSource1";
+            this.excelDataSource1.ResultSchemaSerializable = resources.GetString("excelDataSource1.ResultSchemaSerializable");
+            fieldInfo1.Name = "ProductID";
+            fieldInfo1.Type = typeof(double);
+            fieldInfo2.Name = "CategoryID";
+            fieldInfo2.Type = typeof(double);
+            fieldInfo3.Name = "ProductName";
+            fieldInfo3.Type = typeof(string);
+            fieldInfo4.Name = "QuantityPerUnit";
+            fieldInfo4.Type = typeof(string);
+            fieldInfo5.Name = "SupplierID";
+            fieldInfo5.Type = typeof(double);
+            fieldInfo6.Name = "UnitsInStock";
+            fieldInfo6.Type = typeof(double);
+            fieldInfo7.Name = "UnitsOnOrder";
+            fieldInfo7.Type = typeof(double);
+            fieldInfo8.Name = "UnitPrice";
+            fieldInfo8.Type = typeof(string);
+            fieldInfo9.Name = "ReorderLevel";
+            fieldInfo9.Type = typeof(double);
+            fieldInfo10.Name = "Discontinued";
+            fieldInfo10.Type = typeof(bool);
+            this.excelDataSource1.Schema.AddRange(new DevExpress.DataAccess.Excel.FieldInfo[] {
+            fieldInfo1,
+            fieldInfo2,
+            fieldInfo3,
+            fieldInfo4,
+            fieldInfo5,
+            fieldInfo6,
+            fieldInfo7,
+            fieldInfo8,
+            fieldInfo9,
+            fieldInfo10});
+            csvSourceOptions1.Culture = new System.Globalization.CultureInfo("");
+            csvSourceOptions1.DetectNewlineType = true;
+            csvSourceOptions1.Encoding = ((System.Text.Encoding)(resources.GetObject("csvSourceOptions1.Encoding")));
+            csvSourceOptions1.ValueSeparator = '|';
+            this.excelDataSource1.SourceOptions = csvSourceOptions1;
+            // 
+            // objectDataSource1
+            // 
+            this.objectDataSource1.DataMember = "GetProducts";
+            this.objectDataSource1.DataSource = typeof(DrillThroughReport.DataHelper);
+            this.objectDataSource1.Name = "objectDataSource1";
+            // 
             // DetailReport
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -338,9 +400,10 @@ namespace DrillThroughReport {
             this.topMarginBand1,
             this.bottomMarginBand1});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
-            this.sqlDataSource1});
-            this.DataMember = "Products";
-            this.DataSource = this.sqlDataSource1;
+            this.sqlDataSource1,
+            this.excelDataSource1,
+            this.objectDataSource1});
+            this.DataSource = this.objectDataSource1;
             this.DrawGrid = false;
             this.FilterString = "[CategoryID] = ?catId";
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
@@ -350,6 +413,7 @@ namespace DrillThroughReport {
             this.Version = "20.2";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -378,5 +442,7 @@ namespace DrillThroughReport {
         private DevExpress.XtraReports.UI.TopMarginBand topMarginBand1;
         private DevExpress.XtraReports.UI.BottomMarginBand bottomMarginBand1;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
+        private DevExpress.DataAccess.Excel.ExcelDataSource excelDataSource1;
+        private DevExpress.DataAccess.ObjectBinding.ObjectDataSource objectDataSource1;
     }
 }

@@ -21,7 +21,7 @@ Namespace DrillThroughReport
 
 		Private Sub xrLabel1_PreviewClick(ByVal sender As Object, ByVal e As PreviewMouseEventArgs) Handles xrLabel1.PreviewClick
 			Dim detailReport As New DetailReport()
-			Dim row As IRow = DirectCast(e.Brick.Value, IRow)
+			Dim row As DataRowView = CType(e.Brick.Value, DataRowView)
 			detailReport.Parameters("catId").Value = row("CategoryID")
 			detailReport.Parameters("catName").Value = row("CategoryName")
 			Dim pt As New ReportPrintTool(detailReport)

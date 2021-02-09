@@ -19,7 +19,7 @@ namespace DrillThroughReport {
 
         private void xrLabel1_PreviewClick(object sender, PreviewMouseEventArgs e) {
             DetailReport detailReport = new DetailReport();
-            IRow row = (IRow)e.Brick.Value;
+            DataRowView row = (DataRowView)e.Brick.Value;
             detailReport.Parameters["catId"].Value = row["CategoryID"];
             detailReport.Parameters["catName"].Value = row["CategoryName"];
             ReportPrintTool pt = new ReportPrintTool(detailReport);

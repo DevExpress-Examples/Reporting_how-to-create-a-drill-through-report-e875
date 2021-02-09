@@ -39,11 +39,18 @@
 			Dim column6 As New DevExpress.DataAccess.Sql.Column()
 			Dim columnExpression6 As New DevExpress.DataAccess.Sql.ColumnExpression()
 			Dim resources As New System.ComponentModel.ComponentResourceManager(GetType(MasterReport))
+			Dim fieldInfo1 As New DevExpress.DataAccess.Excel.FieldInfo()
+			Dim fieldInfo2 As New DevExpress.DataAccess.Excel.FieldInfo()
+			Dim fieldInfo3 As New DevExpress.DataAccess.Excel.FieldInfo()
+			Dim csvSourceOptions1 As New DevExpress.DataAccess.Excel.CsvSourceOptions()
 			Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
 			Me.xrLabel1 = New DevExpress.XtraReports.UI.XRLabel()
 			Me.topMarginBand1 = New DevExpress.XtraReports.UI.TopMarginBand()
 			Me.bottomMarginBand1 = New DevExpress.XtraReports.UI.BottomMarginBand()
 			Me.sqlDataSource1 = New DevExpress.DataAccess.Sql.SqlDataSource(Me.components)
+			Me.excelDataSource1 = New DevExpress.DataAccess.Excel.ExcelDataSource()
+			Me.objectDataSource1 = New DevExpress.DataAccess.ObjectBinding.ObjectDataSource(Me.components)
+			CType(Me.objectDataSource1, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
 			' 
 			' Detail
@@ -114,13 +121,37 @@
 			Me.sqlDataSource1.Queries.AddRange(New DevExpress.DataAccess.Sql.SqlQuery() { selectQuery1})
 			Me.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable")
 			' 
+			' excelDataSource1
+			' 
+			Me.excelDataSource1.FileName = "Categories.csv"
+			Me.excelDataSource1.Name = "excelDataSource1"
+			Me.excelDataSource1.ResultSchemaSerializable = "PFZpZXc+PEZpZWxkIE5hbWU9IkNhdGVnb3J5SUQiIFR5cGU9IkRvdWJsZSIgLz48RmllbGQgTmFtZT0iQ" & "2F0ZWdvcnlOYW1lIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkRlc2NyaXB0aW9uIiBUeXBlP" & "SJTdHJpbmciIC8+PC9WaWV3Pg=="
+			fieldInfo1.Name = "CategoryID"
+			fieldInfo1.Type = GetType(Double)
+			fieldInfo2.Name = "CategoryName"
+			fieldInfo2.Type = GetType(String)
+			fieldInfo3.Name = "Description"
+			fieldInfo3.Type = GetType(String)
+			Me.excelDataSource1.Schema.AddRange(New DevExpress.DataAccess.Excel.FieldInfo() { fieldInfo1, fieldInfo2, fieldInfo3})
+			csvSourceOptions1.Culture = New System.Globalization.CultureInfo("")
+			csvSourceOptions1.DetectNewlineType = True
+			csvSourceOptions1.Encoding = (CType(resources.GetObject("csvSourceOptions1.Encoding"), System.Text.Encoding))
+			csvSourceOptions1.ValueSeparator = "|"c
+			Me.excelDataSource1.SourceOptions = csvSourceOptions1
+			' 
+			' objectDataSource1
+			' 
+			Me.objectDataSource1.DataMember = "GetCategories"
+			Me.objectDataSource1.DataSource = GetType(DrillThroughReport.DataHelper)
+			Me.objectDataSource1.Name = "objectDataSource1"
+			' 
 			' MasterReport
 			' 
 			Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() { Me.Detail, Me.topMarginBand1, Me.bottomMarginBand1})
-			Me.ComponentStorage.AddRange(New System.ComponentModel.IComponent() { Me.sqlDataSource1})
-			Me.DataMember = "Categories"
-			Me.DataSource = Me.sqlDataSource1
+			Me.ComponentStorage.AddRange(New System.ComponentModel.IComponent() { Me.sqlDataSource1, Me.excelDataSource1, Me.objectDataSource1})
+			Me.DataSource = Me.objectDataSource1
 			Me.Version = "20.2"
+			CType(Me.objectDataSource1, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
 		End Sub
@@ -132,5 +163,7 @@
 		Private topMarginBand1 As DevExpress.XtraReports.UI.TopMarginBand
 		Private bottomMarginBand1 As DevExpress.XtraReports.UI.BottomMarginBand
 		Private sqlDataSource1 As DevExpress.DataAccess.Sql.SqlDataSource
+		Private excelDataSource1 As DevExpress.DataAccess.Excel.ExcelDataSource
+		Private objectDataSource1 As DevExpress.DataAccess.ObjectBinding.ObjectDataSource
 	End Class
 End Namespace

@@ -39,11 +39,18 @@ namespace DrillThroughReport {
             DevExpress.DataAccess.Sql.Column column6 = new DevExpress.DataAccess.Sql.Column();
             DevExpress.DataAccess.Sql.ColumnExpression columnExpression6 = new DevExpress.DataAccess.Sql.ColumnExpression();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MasterReport));
+            DevExpress.DataAccess.Excel.FieldInfo fieldInfo1 = new DevExpress.DataAccess.Excel.FieldInfo();
+            DevExpress.DataAccess.Excel.FieldInfo fieldInfo2 = new DevExpress.DataAccess.Excel.FieldInfo();
+            DevExpress.DataAccess.Excel.FieldInfo fieldInfo3 = new DevExpress.DataAccess.Excel.FieldInfo();
+            DevExpress.DataAccess.Excel.CsvSourceOptions csvSourceOptions1 = new DevExpress.DataAccess.Excel.CsvSourceOptions();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.topMarginBand1 = new DevExpress.XtraReports.UI.TopMarginBand();
             this.bottomMarginBand1 = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
+            this.excelDataSource1 = new DevExpress.DataAccess.Excel.ExcelDataSource();
+            this.objectDataSource1 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -114,6 +121,35 @@ namespace DrillThroughReport {
             selectQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
+            // excelDataSource1
+            // 
+            this.excelDataSource1.FileName = "Categories.csv";
+            this.excelDataSource1.Name = "excelDataSource1";
+            this.excelDataSource1.ResultSchemaSerializable = "PFZpZXc+PEZpZWxkIE5hbWU9IkNhdGVnb3J5SUQiIFR5cGU9IkRvdWJsZSIgLz48RmllbGQgTmFtZT0iQ" +
+    "2F0ZWdvcnlOYW1lIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkRlc2NyaXB0aW9uIiBUeXBlP" +
+    "SJTdHJpbmciIC8+PC9WaWV3Pg==";
+            fieldInfo1.Name = "CategoryID";
+            fieldInfo1.Type = typeof(double);
+            fieldInfo2.Name = "CategoryName";
+            fieldInfo2.Type = typeof(string);
+            fieldInfo3.Name = "Description";
+            fieldInfo3.Type = typeof(string);
+            this.excelDataSource1.Schema.AddRange(new DevExpress.DataAccess.Excel.FieldInfo[] {
+            fieldInfo1,
+            fieldInfo2,
+            fieldInfo3});
+            csvSourceOptions1.Culture = new System.Globalization.CultureInfo("");
+            csvSourceOptions1.DetectNewlineType = true;
+            csvSourceOptions1.Encoding = ((System.Text.Encoding)(resources.GetObject("csvSourceOptions1.Encoding")));
+            csvSourceOptions1.ValueSeparator = '|';
+            this.excelDataSource1.SourceOptions = csvSourceOptions1;
+            // 
+            // objectDataSource1
+            // 
+            this.objectDataSource1.DataMember = "GetCategories";
+            this.objectDataSource1.DataSource = typeof(DrillThroughReport.DataHelper);
+            this.objectDataSource1.Name = "objectDataSource1";
+            // 
             // MasterReport
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -121,10 +157,12 @@ namespace DrillThroughReport {
             this.topMarginBand1,
             this.bottomMarginBand1});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
-            this.sqlDataSource1});
-            this.DataMember = "Categories";
-            this.DataSource = this.sqlDataSource1;
+            this.sqlDataSource1,
+            this.excelDataSource1,
+            this.objectDataSource1});
+            this.DataSource = this.objectDataSource1;
             this.Version = "20.2";
+            ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -136,5 +174,7 @@ namespace DrillThroughReport {
         private DevExpress.XtraReports.UI.TopMarginBand topMarginBand1;
         private DevExpress.XtraReports.UI.BottomMarginBand bottomMarginBand1;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
+        private DevExpress.DataAccess.Excel.ExcelDataSource excelDataSource1;
+        private DevExpress.DataAccess.ObjectBinding.ObjectDataSource objectDataSource1;
     }
 }

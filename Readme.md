@@ -7,8 +7,9 @@
 # How to create a drill-through report
 
 
-<p>This example demonstrates the implementation of the so-called <a href="http://help.devexpress.com/XtraReports/CustomDocument7058.aspx">drill-through report</a>.</p><p>In this example, clicking the data-bound label in preview invokes the detail report, to which the label's current value is passed as a parameter.</p>
+This example demonstrates a [drill-through report](https://docs.devexpress.com/XtraReports/4789).
 
-<br/>
+You can click the data-bound label in the master report preview to invoke the detail report. The code that handles the [PreviewClick](http://docs.devexpress.devx/XtraReports/DevExpress.XtraReports.UI.XRControl.PreviewClick) event passes the record ID from the master report to the detail report as a parameter.
+
 
 

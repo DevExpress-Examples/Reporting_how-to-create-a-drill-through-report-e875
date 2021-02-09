@@ -10,7 +10,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyConfiguration("")>
 <Assembly: AssemblyCompany("")>
 <Assembly: AssemblyProduct("DrillThroughReport")>
-<Assembly: AssemblyCopyright("Copyright ©  2008")>
+<Assembly: AssemblyCopyright("Copyright ©  2021")>
 <Assembly: AssemblyTrademark("")>
 <Assembly: AssemblyCulture("")>
 

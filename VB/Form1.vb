@@ -1,7 +1,6 @@
 ﻿Imports System
 Imports System.Windows.Forms
 Imports DevExpress.XtraReports.UI
-' ...
 
 Namespace DrillThroughReport
 	Partial Public Class Form1
